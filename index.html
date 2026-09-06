@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sebuah pesan untuk dia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="desktop">
+
+  <!-- ============ BOOT WINDOW ============ -->
+  <section class="window window-alt" id="boot">
+    <div class="titlebar">
+      <span class="tb-label">System</span>
+      <span class="tb-lights"><span></span><span></span><span></span></span>
+    </div>
+    <div class="window-body">
+      <div class="boot-label">MEMUAT PESAN...</div>
+      <div class="loading-track"><div class="loading-fill" id="loadingFill"></div></div>
+      <div class="boot-pct" id="loadingPct">0%</div>
+      <div class="boot-hint" id="bootHint">
+        <div>siap dibuka.</div>
+        <button class="btn btn-primary" id="bootEnterBtn">buka &gt;&gt;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INTRO / TYPEWRITER WINDOW ============ -->
+  <section class="window" id="intro">
+    <div class="titlebar">
+      <span class="tb-label" id="introTitle">Pesan Baru</span>
+      <span class="tb-lights"><span></span><span></span><span></span></span>
+    </div>
+    <div class="window-body">
+      <div class="type-lines" id="typeLines"></div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY WINDOW ============ -->
+  <section class="window" id="gallery">
+    <div class="titlebar">
+      <span class="tb-label">Foto Kita</span>
+      <span class="tb-lights"><span></span><span></span><span></span></span>
+    </div>
+    <div class="window-body">
+      <div class="gallery-frame" id="galleryFrame"></div>
+      <div class="gallery-caption" id="galleryCaption"></div>
+      <div class="gallery-controls">
+        <button class="icon-btn" id="galleryPrev" aria-label="foto sebelumnya"></button>
+        <button class="icon-btn" id="galleryNext" aria-label="foto berikutnya"></button>
+      </div>
+      <div class="gallery-dots" id="galleryDots"></div>
+    </div>
+  </section>
+
+  <!-- ============ MUSIC PLAYER WINDOW ============ -->
+  <section class="window" id="player">
+    <div class="titlebar">
+      <span class="tb-label">Muter Lagu</span>
+      <span class="tb-lights"><span></span><span></span><span></span></span>
+    </div>
+    <div class="window-body">
+      <div class="player-track">
+        <div class="t-title" id="trackTitle"></div>
+        <div id="trackArtist"></div>
+      </div>
+      <div class="player-controls">
+        <button class="icon-btn" id="trackPrev" aria-label="lagu sebelumnya"></button>
+        <button class="icon-btn play" id="trackPlay" aria-label="putar/pause"></button>
+        <button class="icon-btn" id="trackNext" aria-label="lagu berikutnya"></button>
+      </div>
+      <div class="progress-row">
+        <span id="timeNow">0:00</span>
+        <input type="range" id="trackSeek" min="0" max="100" value="0">
+        <span id="timeTotal">0:00</span>
+      </div>
+      <audio id="audioEl" preload="none"></audio>
+    </div>
+  </section>
+
+  <!-- ============ LETTER / PROFILE CARD WINDOW ============ -->
+  <section class="window" id="letter">
+    <div class="titlebar">
+      <span class="tb-label" id="letterName"></span>
+      <span class="tb-lights"><span></span><span></span><span></span></span>
+    </div>
+    <div class="window-body">
+      <div class="letter-frame" id="letterFrame"></div>
+      <h3 class="letter-title" id="letterTitle"></h3>
+      <p class="letter-text" id="letterText"></p>
+      <div class="letter-actions">
+        <button class="icon-btn" id="likeBtn" aria-label="suka"></button>
+        <button class="icon-btn" id="noteBtn" aria-label="catatan"></button>
+        <button class="icon-btn" id="toAskBtn" aria-label="lanjut"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUESTION / DIALOG WINDOW ============ -->
+  <section class="window window-alt" id="ask">
+    <div class="titlebar">
+      <span class="tb-label">Pertanyaan.exe</span>
+      <span class="tb-lights"><span></span><span></span><span></span></span>
+    </div>
+    <div class="dialog-body">
+      <div class="dialog-question" id="dialogQuestion"></div>
+      <div class="dialog-ok-wrap">
+        <button class="btn-ok" id="okBtn">OK</button>
+        <span class="cursor-deco" id="cursorIcon"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL REVEAL ============ -->
+  <section class="window" id="final">
+    <div class="titlebar">
+      <span class="tb-label">Terkirim!</span>
+      <span class="tb-lights"><span></span><span></span><span></span></span>
+    </div>
+    <div class="final-body" id="finalBody">
+      <div class="envelope-wrap" id="envelopeIcon"></div>
+      <p class="final-text" id="finalText"></p>
+      <button class="btn replay-btn" id="replayBtn">putar ulang dari awal</button>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="siteFooter"></footer>
+
+<script src="icons.js"></script>
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
